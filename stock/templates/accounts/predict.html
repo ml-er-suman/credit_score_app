@@ -1,0 +1,38 @@
+{%extends 'sidenav.html'%}
+{%load static%}
+
+{% block body%}
+<div class="container-fluid mt--7">
+  <div class="row">
+	    <div class="col">
+	          <div class="card shadow">
+	            <div class="card-header bg-transparent">
+	            <h3 class="mb-0">Credit Card Customer Predictions</h3>
+	            </div>
+	            <div class="card-body">
+	            	<div class="table-responsive">
+						<table class="table table-bordered">
+							<tr>
+								<th>Customer Name</th>
+								<th>Non Default probabilty %</th>
+								<th>Default probability %</th>
+								<th>Score Result</th>
+							</tr>
+								{%for a,b,c,d in final%}
+							<tr>
+								<td>{{a}}</td>
+								<td>{{b}}</td>
+								<td>{{c}}</td>
+								{% if d == "Eligible" %}
+								<td class="table-success"">{{d}}</td>
+								{%else %} <td class="table-danger"> {{d}} {% endif %}</td>
+							</tr>
+								{%endfor%}
+						</table>
+					</div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</div>
+{%endblock%}

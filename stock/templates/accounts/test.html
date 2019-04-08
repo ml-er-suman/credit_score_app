@@ -1,0 +1,297 @@
+{%extends 'sidenav.html'%}
+{%load static%}
+
+{% block body%}
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col">
+      <form method="post" action="/home/predict">
+        {%csrf_token%}
+          <div class="card shadow">
+            <div class="card-header bg-transparent">
+            <h3 class="mb-0">Customer Details</h3>
+            </div>
+            <div class="card-body">
+
+              <div class="form-group row">
+                <label  class="col-sm-4 col-form-label">Full Name</label>
+                <div class="col-sm-6">
+                <input name="full_name" type="text" class="form-control" >
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label  class="col-sm-4 col-form-label">Employed Flag</label>
+                <div class="col-sm-6">
+                <select name="type_of_employment" class="form-control" required="True">     
+                <option value => </option>
+                <option value = 0>Employed</option>
+                <option value = 1>Self-employed</option>
+                <option value = 2> Unemployed</option>
+                </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Gender</label>
+                <div class="col-sm-6">
+                <select name="gender" class="form-control"  required="True">
+                <option value =></option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Others</option>
+                </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Education</label><br>
+                <div class="col-sm-6">
+                <select name="education" class="form-control" required="True">
+                <option value =></option>
+                <option>School</option>
+                <option>intermediate</option>
+                <option>Graduate</option>
+                <option>Post-Graduate</option>
+                <option>None</option>
+                </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Marital Status</label>
+                <div class="col-sm-6">
+                <select name="marital_status" class="form-control" required="True">
+                <option value =></option>
+                <option>None</option>
+                <option>Single</option>
+                <option>Married</option>
+                <option>Divorced</option>
+                </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">No of Dependent</label>
+                <div class="col-sm-6">
+                <select name="no_of_dependent" class="form-control" >
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>More than 4</option>
+                <option>None</option>
+                </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="example-date-input" class="col-4 col-form-label">Date</label>
+                <div class="col-6">
+                <input class="form-control" type="date" value="2019-01-01" id="example-date-input">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label  class="col-sm-4 ">Source Of Income</label>
+                <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                <input name="source_of_income" class="form-check-input" type="checkbox" value="Salaried" >
+                <label class="form-check-label">Salaried</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input name="source_of_income"class="form-check-input" type="checkbox"  value="Rental Income">
+                <label class="form-check-label">Rental Income</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input name="source_of_income" class="form-check-input" type="checkbox" value="Self-employed" >
+                <label class="form-check-label">Self-employed</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input name="source_of_income" class="form-check-input" type="checkbox" value="Pension" >
+                <label class="form-check-label">Pension</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input name="source_of_income" class="form-check-input" type="checkbox" value="None" >
+                <label class="form-check-label">None</label>
+                </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label  class="col-sm-4 col-form-label">Profession</label>
+                <div class="col-sm-6">
+                <select id="profession" name="profession" class="form-control"  >
+                <option>CA</option>
+                <option value="Student">Student</option>
+                <option>Engineer</option>
+                <option>Doctor</option>
+                <option>Businessman</option>
+                <option>Banker</option>
+                <option>Others</option>
+                </select>
+                </div>
+              </div>
+
+              <div id="position" class="form-group row">
+                <label  class="col-sm-4 col-form-label">Position On Organisation</label>
+                <div class="col-sm-6">
+                <select name="position" class="form-control" >
+                <option>Manager</option>
+                <option>Executive</option>
+                <option>Production worker</option>
+                <option>Director</option>
+                <option>Government Employee</option>
+                <option>others</option>
+                </select>
+                </div>      
+              </div>
+
+              <div id="monthly_income_range" class="form-group row">
+                <label   class="col-sm-4 col-form-label">Monthly Income Range</label>
+                <div class="col-sm-6">
+                <select name="monthly_income_range" class="form-control" required="True">
+                <option value =></option>
+                <option value = 0>None</option>
+                <option value = 1>NPR 0-25000</option>
+                <option value = 2>NPR 25001-35000</option>
+                <option value = 3>NPR 35001-50000</option>
+                <option value = 4>NPR 50001-100000</option>
+                <option value = 5>More than NPR 100000</option>
+                </select>
+                </div>
+              </div>
+
+              <div id="years_of_employment" class="form-group row">
+                <label  class="col-sm-4 col-form-label">Years of Employment</label>
+                <div class="col-sm-6">
+                <select name="yr_of_emp" class="form-control" required>
+                <option value =></option>
+                <option value=0>None</option>
+                <option value=1>below 3</option>
+                <option value=2>3-5 yrs</option>
+                <option value=3>6-10 yrs</option>
+                <option value=4>More than 10 yrs</option>
+                </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label   class="col-sm-4 col-form-label">Zone</label>
+                <div class="col-sm-6">
+                <select class="form-control" name="zone" id= "zone" >
+                  <option value="None">Select a zone</option>
+                  {%for i in zone%}
+                  <option value="{{i}}">{{i}}</option>
+                  {%endfor%}
+                </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label  class="col-sm-4 col-form-label">District</label>
+                <div class="col-sm-6">
+                  <select class="form-control" name="district" id="districtoptions" required="True">
+                </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label  class="col-sm-4 col-form-label">Address</label>
+                <div class="col-sm-6">
+                <input type="text"  name="address" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label  class="col-sm-4 col-form-label">House Type</label>
+                <div class="col-sm-6">
+                <select class="form-control" name="residence" >
+                <option value =></option>
+                <option value =0>None</option>
+                <option value =1>Own</option>
+                <option value =2>Rented</option>
+                <option value =3>Company Provided</option>
+                <option value =0>Others</option>
+                </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label  class="col-sm-4 col-form-label">Phone1</label>
+                <div class="col-sm-6">
+                <input type="Number" name="phone1" class="form-control"  >
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label  class="col-sm-4 col-form-label">Email address</label>
+                <div class="col-sm-6">
+                <input type="email" name="email" class="form-control"  >
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label  class="col-sm-4 col-form-label">No of Years at current address</label>
+                <div class="col-sm-6">
+                <input type="Number" name="no_of_years_at_current_address" class="form-control"  >
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label  class="col-sm-4"><b>Do you have an account in MBL ?</b></label>
+                <div class="col-sm-6">
+                <select id="mbl_account" name ="mbl_account" class="form-control"  >
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+                </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label  class="col-sm-4"><b>Do you have Other Credit Card ?</b></label>
+                <div class="col-sm-6">
+                <div class="form-check form-check-inline">
+                <input name="other_credit_card" class="form-check-input" type="radio" name="other credit card" value="yes" >
+                <label class="form-check-label">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input  name="other_credit_card" class="form-check-input" type="radio" name="other credit card" value="no">
+                <label class="form-check-label" >No</label>
+                </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <br>                         
+        <button type="submit" id="prediction" class="btn btn-secondary">Credit Score</button>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- javascript reference -->
+  <script src="{% static 'source/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'source/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<script type="text/javascript">
+  $("#zone").change(function (){
+  $("#districtoptions").html("");
+
+  var str =$( "#zone option:selected" ).text();
+  var y="{{allzone}}";
+  y=y.replace(/&quot;/ig,'"');
+  y=JSON.parse(y);
+  var districtlist=y[str];
+  for(i in districtlist)
+  {
+    $("#districtoptions").append("<option value="+districtlist[i]+">"+districtlist[i]+"</option>");
+  }
+
+
+    });
+</script>
+
+
+
+{%endblock%}

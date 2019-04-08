@@ -1,0 +1,187 @@
+body
+{
+font-family:Lato
+}
+h1,h2,h3,h4,h5,h6{
+font-family:Catamaran;
+font-weight:800!important
+}
+.btn-xl{
+text-transform:uppercase;
+padding:1.5rem 3rem;
+font-size:.9rem;
+font-weight:700;
+letter-spacing:.1rem
+}
+.bg-black{
+background-color:#000!important
+}
+.rounded-pill{
+border-radius:5rem
+}
+.navbar-custom{
+padding-top:1rem;
+padding-bottom:1rem;background-color:rgba(0,0,0,.7)
+}
+.navbar-custom .navbar-brand{
+text-transform:uppercase;
+font-size:1rem;
+letter-spacing:.1rem;
+font-weight:700
+}
+.navbar-custom .navbar-nav .nav-item .nav-link{
+text-transform:uppercase;
+font-size:.8rem;
+font-weight:700;
+letter-spacing:.1rem
+}
+header.masthead{
+position:relative;
+overflow:hidden;padding-top:calc(7rem + 72px);
+padding-bottom:7rem;
+background-image: url("/static/source/img/05.jpg");
+background-repeat:no-repeat;
+background-position:center center;
+background-attachment:scroll;
+background-size:fit
+}
+header.masthead .masthead-content{
+z-index:1;position:relative
+}
+header.masthead .masthead-content .masthead-heading{
+font-size:4rem
+}
+header.masthead .masthead-content .masthead-subheading{
+font-size:2rem
+}
+header.masthead .bg-circle{
+z-index:0;position:absolute;border-radius:100%;
+background:linear-gradient(0deg,#ee0979 0,#ff6a00 100%)
+}
+header.masthead .bg-circle-1{
+height:90rem;
+width:90rem;
+bottom:-55rem;
+left:-55rem
+}
+header.masthead .bg-circle-2{
+height:50rem;
+width:50rem;
+top:-25rem;
+right:-25rem
+}
+header.masthead .bg-circle-3{
+height:20rem;
+width:20rem;
+bottom:-10rem;
+right:5%
+}
+header.masthead .bg-circle-4{
+height:30rem;
+width:30rem;
+top:-5rem;
+right:35%
+}
+@media (min-width:992px){
+header.masthead
+{
+padding-top:calc(10rem + 55px);
+padding-bottom:10rem
+}
+header.masthead .masthead-content .masthead-heading{
+font-size:6rem
+}
+header.masthead .masthead-content .masthead-subheading{
+font-size:4rem
+}}
+.bg-primary{
+background-color:#ee0979!important
+}
+.btn-primary{
+background-color:#ee0979;border-color:#ee0979
+}
+.btn-primary:active,.btn-primary:focus,.btn-primary:hover{
+background-color:#bd0760!important;border-color:#bd0760!important
+}
+.btn-primary:focus{
+box-shadow:0 0 0 .2rem rgba(238,9,121,.5)
+}
+.btn-secondary{
+background-color:#ff6a00;border-color:#ff6a00
+}
+
+.btn-secondary:active,.btn-secondary:focus,.btn-secondary:hover{
+background-color:#c50!important;border-color:#c50!important
+}
+.btn-secondary:focus{
+box-shadow:0 0 0 .2rem rgba(255,106,0,.5)
+}
+
+/*csutom css */
+.page-heading {
+  background: #b4b4b4 url(../img/bg1.jpg) 50% 0 no-repeat fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  padding: 72px 0;
+  /* Page Title */
+}
+.page-heading:before,
+.page-heading:after {
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.page-heading:before {
+  bottom: -1px;
+  background: #fff;
+  z-index: 2;
+}
+.page-heading:after {
+  height: 10px;
+  bottom: -10px;
+  z-index: 1;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, transparent 100%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, transparent 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a000000', endColorstr='#00000000', GradientType=0);
+}
+.page-heading {
+  font-size: 18px;
+  margin: 0;
+  color: #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+.section-bg1 {
+  background-image: url(../images/samples/bg1.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-attachment: fixed;
+  background-size: cover;
+  border-top: none;
+  border-bottom: none;
+}
+.page-content {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+.page-content > .container .section:last-child {
+  margin-bottom: -64px !important;
+}
+.page-content > .container .section-nomargin:first-child {
+  margin-top: -64px !important;
+}
+
+hr.line_color {
+
+   background:#4267B2;
+   height:2px;
+   width: 255px;
+
+}

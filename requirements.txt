@@ -1,0 +1,16 @@
+cycler==0.10.0
+Django==2.0.5
+django-crispy-forms==1.7.2
+gunicorn==19.9.0
+kiwisolver==1.0.1
+matplotlib==2.2.2
+numpy==1.15.1
+pandas==0.22.0
+psycopg2==2.7.4
+pyparsing==2.2.0
+python-dateutil==2.7.3
+pytz==2018.5
+scikit-learn==0.19.1
+scipy==1.1.0
+six==1.11.0
+whitenoise==4.0
