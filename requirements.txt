@@ -7,7 +7,7 @@ colorama==0.4.1
 cycler==0.10.0
 decorator==4.3.0
 defusedxml==0.5.0
-Django==2.1.7
+Django==2.2.13
 django-crispy-forms==1.7.2
 djangorestframework==3.9.1
 entrypoints==0.2.3
